@@ -50,6 +50,22 @@ export const asyncRouterMap = [
     ]
   },
   {
+    path: '/merchants',
+    component: Layout,
+    redirect: '/merchants/',
+    name: '',
+    meta: {title: '商家信息', icon: 'table'},
+    children: [
+      {
+        path: 'merchants',
+        name: '商家信息',
+        component: _import('merchants/merchants'),
+        meta: {title: '商家信息', icon: 'password'},
+        menu: 'merchants'
+      },
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     redirect: '/user/',
