@@ -66,6 +66,38 @@ export const asyncRouterMap = [
     ]
   },
   {
+    path: '/commodityKind',
+    component: Layout,
+    redirect: '/commodityKind/',
+    name: '',
+    meta: {title: '商品信息', icon: 'table'},
+    children: [
+      {
+        path: 'commodityKind1',
+        name: '商品信息',
+        component: _import('commodityKind/commodityKind'),
+        meta: {title: '商品信息', icon: 'password'},
+        menu: 'commodityKind'
+      },
+    ]
+  },
+  {
+    path: '/commodityClassif',
+    component: Layout,
+    redirect: '/commodityClassif/',
+    name: '',
+    meta: {title: '商品信息', icon: 'table'},
+    children: [
+      {
+        path: 'commodityClassif',
+        name: '商品种类',
+        component: _import('commodityClassif/commodityClassif'),
+        meta: {title: '商品种类', icon: 'password'},
+        menu: 'commodityClassif'
+      },
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     redirect: '/user/',
