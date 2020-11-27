@@ -11,30 +11,32 @@
     <el-form-item label="商家地址">
       <el-input v-model="merchants.businessDress"></el-input>
     </el-form-item><br>
-    <el-form-item label="开始营业时间">
-      <el-col :span="11">
-      <el-date-picker type="fixed-time" placeholder="选择日期" v-model="merchants.businessHoursBefrom" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-      <el-col :span="11">
-        <el-time-picker type="fixed-time" placeholder="选择时间" v-model="merchants.businessHoursBefrom" style="width: 100%;"></el-time-picker>
-      </el-col>
-    </el-form-item>
-    <el-form-item label="结束营业时间">
-      <el-col :span="11">
-      <el-date-picker type="fixed-time" placeholder="选择日期" v-model="merchants.businessHoursBefrom" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-     <el-col :span="11">
-        <el-time-picker type="fixed-time" placeholder="选择时间" v-model="merchants.businessHoursAfter" style="width: 100%;"></el-time-picker>
-      </el-col>
-    </el-form-item>
     <el-form-item label="商家简介">
-      <el-input type="textarea" v-model="merchants.businessBrief"></el-input>
-    </el-form-item>
+      <el-input v-model="merchants.businessBrief"></el-input>
+    </el-form-item><br>
+    <span style="margin-left:10px;font-size:14px;">营业时间</span>
+    <el-time-select
+    style="margin-left:9px;"
+    placeholder="起始时间" 
+    v-model="merchants.businessHoursBefrom"
+    :picker-options="{
+      start: '08:30',
+      step: '00:15',
+      end: '18:30'
+    }">
+  </el-time-select>
+  <el-time-select
+    placeholder="结束时间"
+    v-model="merchants.businessHoursAfter"
+    :picker-options="{
+      start: '08:30',
+      step: '00:15',
+      end: '18:30',
+      minTime: startTime
+    }">
+  </el-time-select><br/><br/>
     <el-form-item>
-      <el-button type="primary" @click="updateMerchants()">立即创建</el-button>
-      <el-button>取消</el-button>
+      <el-button style="margin-left:70px" type="success" @click="updateMerchants()">修改</el-button>
     </el-form-item>
 </el-form>
     </div>
