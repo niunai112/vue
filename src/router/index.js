@@ -86,7 +86,7 @@ export const asyncRouterMap = [
     component: Layout,
     redirect: '/commodityClassif/',
     name: '',
-    meta: {title: '商品信息', icon: 'table'},
+    meta: {title: '商品种类', icon: 'table'},
     children: [
       {
         path: 'commodityClassif',
@@ -94,6 +94,22 @@ export const asyncRouterMap = [
         component: _import('commodityClassif/commodityClassif'),
         meta: {title: '商品种类', icon: 'password'},
         menu: 'commodityClassif'
+      },
+    ]
+  },
+  {
+    path: '/orderManagement/orderManagement',
+    component: Layout,
+    redirect: '/orderManagement/',
+    name: '',
+    meta: {title: '订单管理', icon: 'table'},
+    children: [
+      {
+        path: 'orderManagement',
+        name: '订单管理',
+        component: _import('orderManagement/orderManagement'),
+        meta: {title: '订单管理', icon: 'password'},
+        menu: 'orderManagement'
       },
     ]
   },
