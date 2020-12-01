@@ -114,6 +114,22 @@ export const asyncRouterMap = [
     ]
   },
   {
+    path: '/orderSon/orderSon',
+    component: Layout,
+    redirect: '/orderSon/',
+    name: '',
+    meta: {title: '订单管理子页', icon: 'table'},
+    children: [
+      {
+        path: 'orderSon',
+        name: '订单管理子页',
+        component: _import('orderSon/orderSon'),
+        meta: {title: '订单管理子页', icon: 'password'},
+        menu: 'orderSon'
+      },
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     redirect: '/user/',
