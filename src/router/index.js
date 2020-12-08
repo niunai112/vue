@@ -146,6 +146,22 @@ export const asyncRouterMap = [
     ]
   },
   {
+    path: '/dress/dress',
+    component: Layout,
+    redirect: '/dress/',
+    name: '',
+    meta: {title: '顾客地址', icon: 'table'},
+    children: [
+      {
+        path: 'dress',
+        name: '顾客地址',
+        component: _import('dress/dress'),
+        meta: {title: '顾客地址', icon: 'password'},
+        menu: 'dress'
+      },
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     redirect: '/user/',
